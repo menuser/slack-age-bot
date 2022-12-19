@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/shomali11/slacker"
 )
@@ -41,7 +42,9 @@ func main() {
 			if err != nil {
 				println("error")
 			}
-			age := 2022 - yob
+			now := time.Now()
+			currYear := now.Year()
+			age := currYear - yob
 			r := fmt.Sprintf("age is %d", age)
 			response.Reply(r)
 		},
